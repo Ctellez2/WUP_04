@@ -68,10 +68,12 @@ summary.aov(model1)
 According to the data above, the P value is very small. The P value represents the chances of getting this result or something farther when the null hypothesis is actually true. Because the P value is very small, I reject the null hypothesis.
 
 ```{r}
-plot(TukeyHSD(model1))
+#we specify the margins starting at the bottom and proceeding clockwise - thus 8.7 is the left side margin to hold the names of the factors
+par(mar = c(3, 15, 2, 2))
+plot(TukeyHSD(model1,conf.level=.95), las=2)
 ```
 
-
+This shows the high school and graduate are different from each other and LT high school and graduate are different from each other. We can see that LT high school- graduate and high school graduate do not hit the "0" line.
 
 # Discussion and Conclusion
 
